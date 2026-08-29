@@ -1,0 +1,32 @@
+node_modules
+.npm-cache
+
+# Local data (SQLite)
+/data
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Output
+.output
+.vercel
+.netlify
+.wrangler
+/.svelte-kit
+/build
+/dist
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+.env.*
+!.env.example
+!.env.test
+
+# Vite
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
