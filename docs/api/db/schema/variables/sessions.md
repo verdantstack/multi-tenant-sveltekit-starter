@@ -1,0 +1,10 @@
+[**multi-tenant-sveltekit-starter**](../../../README.md)
+
+***
+
+# Variable: sessions
+
+> `const` **sessions**: `SQLiteTableWithColumns`\<\{ `columns`: \{ `createdAtMs`: `SQLiteColumn`\<\{ `baseColumn`: `never`; `columnType`: `"SQLiteInteger"`; `data`: `number`; `dataType`: `"number"`; `driverParam`: `number`; `enumValues`: `undefined`; `generated`: `undefined`; `hasDefault`: `false`; `hasRuntimeDefault`: `false`; `identity`: `undefined`; `isAutoincrement`: `false`; `isPrimaryKey`: `false`; `name`: `"created_at_ms"`; `notNull`: `true`; `tableName`: `"sessions"`; \}, \{ \}, \{ \}\>; `expiresAtMs`: `SQLiteColumn`\<\{ `baseColumn`: `never`; `columnType`: `"SQLiteInteger"`; `data`: `number`; `dataType`: `"number"`; `driverParam`: `number`; `enumValues`: `undefined`; `generated`: `undefined`; `hasDefault`: `false`; `hasRuntimeDefault`: `false`; `identity`: `undefined`; `isAutoincrement`: `false`; `isPrimaryKey`: `false`; `name`: `"expires_at_ms"`; `notNull`: `true`; `tableName`: `"sessions"`; \}, \{ \}, \{ \}\>; `id`: `SQLiteColumn`\<\{ `baseColumn`: `never`; `columnType`: `"SQLiteText"`; `data`: `string`; `dataType`: `"string"`; `driverParam`: `string`; `enumValues`: \[`string`, `...string[]`\]; `generated`: `undefined`; `hasDefault`: `false`; `hasRuntimeDefault`: `false`; `identity`: `undefined`; `isAutoincrement`: `false`; `isPrimaryKey`: `true`; `name`: `"id"`; `notNull`: `true`; `tableName`: `"sessions"`; \}, \{ \}, \{ `length`: `number` \| `undefined`; \}\>; `userId`: `SQLiteColumn`\<\{ `baseColumn`: `never`; `columnType`: `"SQLiteText"`; `data`: `string`; `dataType`: `"string"`; `driverParam`: `string`; `enumValues`: \[`string`, `...string[]`\]; `generated`: `undefined`; `hasDefault`: `false`; `hasRuntimeDefault`: `false`; `identity`: `undefined`; `isAutoincrement`: `false`; `isPrimaryKey`: `false`; `name`: `"user_id"`; `notNull`: `true`; `tableName`: `"sessions"`; \}, \{ \}, \{ `length`: `number` \| `undefined`; \}\>; \}; `dialect`: `"sqlite"`; `name`: `"sessions"`; `schema`: `undefined`; \}\>
+
+Login sessions. `id` is the sha256 of the raw session token — the raw token only ever
+lives in the client cookie and is never persisted.
