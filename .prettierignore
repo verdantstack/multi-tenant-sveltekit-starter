@@ -1,0 +1,49 @@
+# Dependencies
+node_modules/
+
+# Build output
+.svelte-kit/
+build/
+dist/
+output/
+.vercel/
+.netlify/
+.wrangler/
+
+# Generated
+*.timestamp-*
+.mypy_cache/
+.pytest_cache/
+
+# Database files
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+data/
+
+# Generated docs
+docs/api/
+
+# Generated from the canonical EULA by the release tooling.
+# Formatting it here would be undone by the next sync run, and the license
+# sync gate fails on the drift — so the two gates conflict and the sync wins.
+# Reformat the generator, not its output.
+docs/license.md
+
+# Migrations (keep SQL untouched)
+drizzle/
+
+# RLS policies (keep SQL untouched)
+rls/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+.env.*
+
+# NPM cache
+.npm-cache/
