@@ -1,0 +1,30 @@
+# Multi-tenant SvelteKit Starter — Docker Compose
+#
+#   docker compose up -d        # start the app on http://localhost:5173
+#   docker compose logs -f      # follow logs
+#   docker compose down         # stop (data persists in the named volume)
+#
+# The SQLite database is persisted in the `app-data` volume at /app/data/app.db.
+
+services:
+  app:
+    build: .
+    restart: unless-stopped
+    ports:
+      - '5173:5173'
+    environment:
+      - DATA_DIR=/app/data
+      - MOCK_PLAN_SEATS=${MOCK_PLAN_SEATS:-3}
+      - AUTH_FAILED_ATTEMPTS=${AUTH_FAILED_ATTEMPTS:-5}
+      - AUTH_WINDOW_MS=${AUTH_WINDOW_MS:-900000}
+    volumes:
+      - app-data:/app/data
+    healthcheck:
+      test: ['CMD-SHELL', 'wget -qO- http://localhost:5173/ || exit 1']
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  app-data:
